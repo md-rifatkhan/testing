@@ -64,7 +64,7 @@ class ESRGAN:
 
 
     def _init_model(self):
-        self.exec_provider = 'CudaExecutionProvider' # 'CPUExecutionProvider' 'DmlExecutionProvider' 'AzureExecutionProvider'
+        self.exec_provider = 'AzureExecutionProvider' # 'CPUExecutionProvider' 'DmlExecutionProvider' 'AzureExecutionProvider'
         self.session_opti = onnxruntime.SessionOptions()
         self.session_opti.enable_mem_pattern = False
         self.session = onnxruntime.InferenceSession(self.model_path, self.session_opti)
